@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react"
+import {useState,useEffect} from "react"
 import "./AddTripForm.css"
 import { useCollection } from "@squidcloud/react";
 import {Trip} from '../types';
