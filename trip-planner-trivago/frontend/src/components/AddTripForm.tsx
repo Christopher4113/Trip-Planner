@@ -4,6 +4,7 @@ import { useCollection } from "@squidcloud/react";
 import {Trip} from '../types';
 
 function AddTrip() {
+    const [city, setCity] = useState("")
     const [ country, setCountry] = useState("");
     const [startDate, setStartDate] = useState("");
     const [endDate,setEndDate] = useState("");
@@ -20,15 +21,24 @@ function AddTrip() {
     },[]);
 
     const addTrip = () => {
-        const tripId = crypto.randomUUID()
+        const tripId = crypto.randomUUID();
         tripsCollection.doc(tripId).insert({
             id: tripId,
             country,
+            city,
             startDate: new Date(startDate),
             endDate: new Date(endDate),
             notes: []
-        })
-    }
+        }).then(() => {
+            // Clear the form fields by resetting the state
+            setCity("");
+            setCountry("");
+            setStartDate("");
+            setEndDate("");
+        }).catch((error) => {
+            console.error("Error adding trip:", error);
+        });
+    };
 
     return <div className="trip-container">
         <h3>Add Trip</h3>
@@ -41,6 +51,7 @@ function AddTrip() {
                 </option>
                 )}
             </select>
+            <input type="string" value={city} placeholder="city" onChange={(e) => setCity(e.target.value)}/>
             <input type = "date" value={startDate} onChange={(e) => setStartDate(e.target.value)}/>
             <input type = "date" value={endDate} onChange={(e) => setEndDate(e.target.value)}/>
             <button onClick={addTrip}>Add Trip</button>

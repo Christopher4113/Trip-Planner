@@ -28,6 +28,9 @@ function TripCard({trip,onDelete,onAddNote,onDeleteNote, index}: Props){
                 <button className="country-button">
                     {trip.country}
                 </button>
+                <button className="city-button">
+                    {trip.city}
+                </button>
                 <button className="delete-button" onClick={() => onDelete(trip.id)}>
                     Delete
                 </button>
