@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSquid } from "@squidcloud/react";
 import "./AskAI.css"
 import LoadingIndicator from "./LoadingIndicator";
+import { Link } from "react-router-dom";
 
 function AskAI() {
     const [text, setText] = useState("")
@@ -24,6 +25,7 @@ function AskAI() {
 
     return (
         <div className="container">
+            <Link to="/" className="home">Home</Link>
             <h3>Ask a Question!</h3>
             <input type="text" value={text} onChange={(e) => setText(e.target.value)}/>
             {loading ? <LoadingIndicator /> : <button onClick={askPressed}>Ask</button>}

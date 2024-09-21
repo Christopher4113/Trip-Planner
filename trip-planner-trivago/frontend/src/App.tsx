@@ -63,6 +63,22 @@ function App() {
             </div>
           } 
         />
+        <Route
+          path="/hotel-management"
+          element={
+            <div className='card2'>
+
+            </div>
+          }       
+        />
+        <Route
+          path="/budget-management"
+          element={
+            <div className='card3'>
+              
+            </div>
+          }
+        />
       </Routes>
     </Router>
   );
