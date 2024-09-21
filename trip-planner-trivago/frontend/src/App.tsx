@@ -1,4 +1,5 @@
-
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import Home from './Home';
 import './App.css';
 import AddTrip from './components/AddTripForm';
 import TripList from './components/TripList';
@@ -41,17 +42,30 @@ function App() {
 
 
   return (
-    <div className='card'>
-      <AskAI />
-      <AddTrip/>
-      <TripList 
-      trips={trips.data.map((trip) => trip.data)}
-      onDelete={onDelete}
-      onAddNote={onAddNote}
-      onDeleteNote={onDeleteNote}
-      />
-    </div>
-  ); 
+    <Router>
+      <Routes>
+        {/* Home page will load first */}
+        <Route path="/" element={<Home />} />
+        
+        {/* Route to the card component (AskAI, AddTrip, etc.) */}
+        <Route 
+          path="/trip-management" 
+          element={
+            <div className='card'>
+              <AskAI />
+              <AddTrip />
+              <TripList 
+                trips={trips.data.map((trip) => trip.data)}
+                onDelete={onDelete}
+                onAddNote={onAddNote}
+                onDeleteNote={onDeleteNote}
+              />
+            </div>
+          } 
+        />
+      </Routes>
+    </Router>
+  );
 };
 
 export default App;

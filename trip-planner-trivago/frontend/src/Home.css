@@ -1,0 +1,113 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
+
+.main-screen {
+    background-image: url('./images/home.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* 100% of the viewport width */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    overflow: hidden; /* Prevents scrolling */
+    
+  }
+
+.title {
+    text-align: center;
+}
+
+/* From Uiverse.io by KhaledMatalkah */ 
+.realistic-button {
+    display: inline-block;
+    position: relative;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    border: 1px solid #2980b9;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), inset 0px 2px 4px rgba(255, 255, 255, 0.2);
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .realistic-button::before,
+          .realistic-button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+    transition: transform 0.3s;
+  }
+  
+  .realistic-button::before {
+    top: 0;
+    left: -100%;
+    transform: skewX(-45deg);
+  }
+  
+  .realistic-button::after {
+    bottom: 0;
+    right: -100%;
+    transform: skewX(45deg);
+  }
+  
+  .realistic-button:hover {
+    background: linear-gradient(to bottom, #042b46, #0a525cd8);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 8px rgba(0, 195, 255, 0.2), inset 0px 2px 4px rgba(255, 255, 255, 0.1);
+  }
+  
+  .realistic-button:hover::before {
+    transform: translateX(100%);
+  }
+  
+  .realistic-button:hover::after {
+    transform: translateX(-100%);
+  }
+
+
+
+  .neon-text {
+    position: relative;
+    font-family: 'Pacifico', cursive;
+    text-transform: uppercase;
+    font-size: 48px; /* Replace with actual value of $extra-large */
+    color: rgba(233, 212, 222, 0.75); /* lighten($pink, 25%) */
+    -webkit-text-stroke-width: 2.4px; /* 48px * 0.05 */
+    -webkit-text-stroke-color: rgb(255, 255, 255); /* lighten($pink, 5%) */
+    text-shadow: 0 0 40px rgba(24, 0, 238, 0.6), 
+                 0 0 40px rgba(0, 17, 255, 0.6), 
+                 0 0 40px rgba(4, 0, 255, 0.6);
+    text-align: center; /* Example for centering; adjust as needed */
+}
+
+.neon-text:after {
+    content: 'underlying wire'; /* Replace $random-text with the actual text */
+    z-index: -1;
+    position: absolute;
+    color: transparent;
+    -webkit-text-stroke-width: 2.4px; /* Same stroke width as above */
+    -webkit-text-stroke-color: rgba(70, 0, 51, 1); /* darken($pink, 40%) */
+    top: -5%;
+    left: -0.5%;
+}
+
+.option1 {
+    margin-top: 600px;
+    margin-left: 50px;
+}
