@@ -5,7 +5,7 @@ import {Trip} from '../types';
 
 function AddTrip() {
     const [city, setCity] = useState("")
-    const [ country, setCountry] = useState("");
+    const [country, setCountry] = useState("");
     const [startDate, setStartDate] = useState("");
     const [endDate,setEndDate] = useState("");
     const [countries,setCountries] = useState([]);
