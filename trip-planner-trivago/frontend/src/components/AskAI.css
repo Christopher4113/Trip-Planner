@@ -101,3 +101,12 @@
     transform: translateY(5px);
     transition: 200ms;
   }
+    /* Media query for screen width 1024px */
+  @media screen and (max-width: 1024px) {
+    .home {
+      margin-left: 800px; /* Move the button closer to the left */
+      margin-top: 50px; /* Adjust the button downward */
+      padding: 10px 30px; /* Make the button smaller */
+      font-size: 13px; /* Adjust the font size */
+    }
+  }
