@@ -14,6 +14,7 @@ Here're some of the project's best features:
 
 *   Uses TypeScript
 *   Integrates a database that is interacted with AI/ML
+*   Includes a budget planner, itenerary planner, hotel manager and travel manager
 
 <h2>🛠️ Installation Steps:</h2>
 
