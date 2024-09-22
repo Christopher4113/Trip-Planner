@@ -23,18 +23,15 @@ const TravelCard = ({travel,onDeleteTravel,onAddNoteTravel,onDeleteNoteTravel,in
     return (
     <div className="trip-card" key={index}>
     <h4>
-    <span>{format(travel.startDate, "PPP")}-{format(travel.endDate, "PPP")}</span>
+    <span>
+        {`${format(travel.startDate, "PPP")} ${travel.departureTime} - ${format(travel.endDate, "PPP")} ${travel.arrivalTime}`}
+    </span>
+
     <button className="before-button">
        From {travel.before}
     </button>
     <button className="after-button">
        To {travel.after}
-    </button>
-    <button className="departureTime-button">
-        From {travel.departureTime}
-    </button>
-    <button className="arrivalTime-button">
-        To {travel.arrivalTime}
     </button>
     <button className="transportation-button">
         {travel.transportation}
