@@ -27,3 +27,15 @@ export type Budget = {
     id: string;
     city: string;
 }
+
+export type Travel = {
+    startDate: Date;
+    endDate: Date;
+    id: string;
+    before: string
+    after: string
+    departureTime: string
+    arrivalTime: string
+    notes: string[];
+    transportation: string;
+}

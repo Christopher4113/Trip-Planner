@@ -5,8 +5,8 @@ import './Hotel.css'
 type Props = {
     hotel: Hotel;
     onDeleteHotel: (id: string ) => void;
-    onAddNoteHotel: (tripId: string, note: string) => void;
-    onDeleteNoteHotel: (tripId:string, noteIndex: number) => void;
+    onAddNoteHotel: (hotelId: string, note: string) => void;
+    onDeleteNoteHotel: (hotelId:string, noteIndex: number) => void;
     index: number;
 }
 const HotelCard = ({hotel,onAddNoteHotel,onDeleteHotel,onDeleteNoteHotel,index}: Props) => {

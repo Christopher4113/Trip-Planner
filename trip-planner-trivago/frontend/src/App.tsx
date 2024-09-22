@@ -4,12 +4,14 @@ import './App.css';
 import AddTrip from './components/AddTripForm';
 import TripList from './components/TripList';
 import { useCollection, useQuery } from '@squidcloud/react';
-import { Trip, Hotel, Budget } from './types';
+import { Trip, Hotel, Budget, Travel } from './types';
 import AskAI from './components/AskAI';
 import AddHotelForm from './components2/AddHotelForm';
 import HotelList from './components2/HotelList';
 import AddBudgetFrom from './components3/AddBudgetFrom';
 import BudgetList from './components3/BudgetList';
+import AddTravelForm from './components4/AddTravelForm';
+import TravelList from './components4/TravelList';
 
 function App() {
   // Trip collection and query
@@ -23,6 +25,10 @@ function App() {
   //Budget collection and query
   const budgetCollection = useCollection<Budget>("budgets");
   const budgets = useQuery(budgetCollection.query());
+
+  //Travel collection and query
+  const travelCollection = useCollection<Travel>("travels");
+  const travels = useQuery(travelCollection.query());
 
   // Helper function to find a hotel by id
   const findHotel = (id: string) => {
@@ -38,6 +44,11 @@ function App() {
   const findBudget = (id: string) => {
     return budgets.data?.find((budget) => budget.data.id === id);
   };
+  
+  //Helper function to find a travel by id
+  const findTravel = (id: string) => {
+    return travels.data?.find((travel) => travel.data.id === id);
+  }
 
   // Trip functions
   const onDelete = (id: string) => {
@@ -88,6 +99,28 @@ function App() {
   const onDeleteBudget = (id: string) => {
     const budget = findBudget(id);
     if (budget) budget.delete();
+  };
+  //Travel functions
+  const onDeleteTravel = (id: string) => {
+    const travel = findTravel(id);
+    if (travel) travel.delete();
+  };
+
+  const onAddNoteTravel = (travelId: string, note: string) => {
+    const travel = findTravel(travelId);
+    if (!travel) return;
+    const notes = travel.data.notes;
+    notes.push(note);
+    travel.update({ notes });
+  };
+
+  const onDeleteNoteTravel = (travelId: string, noteIndex: number) => {
+    const travel = findTravel(travelId);
+    if (!travel) return;
+    const notes = travel.data.notes;
+    travel.update({
+      notes: notes.filter((_, index) => index !== noteIndex),
+    });
   };
 
   return (
@@ -153,6 +186,13 @@ function App() {
           element={
             <div className="card4">
               <AskAI />
+              <AddTravelForm/>
+              <TravelList 
+                travels={travels.data.map((travel) => travel.data)}
+                onDeleteTravel={onDeleteTravel}
+                onAddNoteTravel={onAddNoteTravel}
+                onDeleteNoteTravel={onDeleteNoteTravel}
+              />
             </div>
           }
         />
