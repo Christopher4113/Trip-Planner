@@ -111,7 +111,7 @@ html, body {
   position: absolute; /* or 'relative', depending on your layout */
   top: 50%; /* Position from the top */
   left: 50%; /* Position from the left */
-  transform: translate(-155%, 50%); /* Center it */
+  transform: translate(-155%, -50%); /* Center it */
   display: flex; /* Use flexbox for centering */
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center items horizontally */
@@ -126,7 +126,7 @@ html, body {
   position: absolute; /* or 'relative', depending on your layout */
   top: 50%; /* Position from the top */
   left: 50%; /* Position from the left */
-  transform: translate(-47%, 50%); /* Center it */
+  transform: translate(55%, 55%); /* Center it */
   display: flex; /* Use flexbox for centering */
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center items horizontally */
@@ -141,7 +141,7 @@ html, body {
   position: absolute; /* or 'relative', depending on your layout */
   top: 50%; /* Position from the top */
   left: 50%; /* Position from the left */
-  transform: translate(65%, 50%); /* Center it */
+  transform: translate(97.5%, -50%); /* Center it */
   display: flex; /* Use flexbox for centering */
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center items horizontally */
@@ -149,6 +149,21 @@ html, body {
 }
 
 .option3 {
+  margin-top: 0; /* Adjust margin to allow for centering */
+  text-align: center; /* Center text inside option1 */
+}
+.o4 {
+  position: absolute; /* or 'relative', depending on your layout */
+  top: 50%; /* Position from the top */
+  left: 50%; /* Position from the left */
+  transform: translate(-230%, 55%); /* Center it */
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+}
+
+.option4 {
   margin-top: 0; /* Adjust margin to allow for centering */
   text-align: center; /* Center text inside option1 */
 }

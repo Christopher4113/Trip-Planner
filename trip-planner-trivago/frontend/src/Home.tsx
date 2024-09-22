@@ -1,6 +1,6 @@
 import './Home.css';
 import { Link } from 'react-router-dom';
-import { CalendarDaysIcon,Building,CreditCard} from "lucide-react"
+import { CalendarDaysIcon,Building,CreditCard,Plane} from "lucide-react"
 
 const Home = () => {
   return (
@@ -37,14 +37,26 @@ const Home = () => {
           <h2>Budget Manager</h2>
           <p>Stay on top of your travel expenses</p>
           <CreditCard className='h-12 w-12 mb-4'></CreditCard>
-          <p>Set a budget for your trip, track expenses, and ensure you're not overspending.</p>
+          <p>Set a budget for your trip to ensure you're not overspending.</p>
           <Link to="/budget-management">
             <button className='realistic-button'>
               Manage Budget
             </button>
           </Link>
         </div>
-
+      </div>
+      <div className='o4'>
+        <div className='option4'>
+        <h2>Travel Manager</h2>
+          <p>Keep track of your transportation</p>
+          <Plane className='h-12 w-12 mb-4'></Plane>
+          <p>Manage your flights, car rentals and boat travels.</p>
+          <Link to="/travel-management">
+            <button className='realistic-button'>
+              Manage Travel
+            </button>
+          </Link>
+        </div>
       </div>
      
       

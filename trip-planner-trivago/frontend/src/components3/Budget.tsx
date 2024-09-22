@@ -1,6 +1,6 @@
 import {format} from "date-fns"
 import {Budget} from "../types"
-import { useState } from "react"
+
 import './Budget.css'
 
 type Props = {
