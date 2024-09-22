@@ -4,10 +4,12 @@ import './App.css';
 import AddTrip from './components/AddTripForm';
 import TripList from './components/TripList';
 import { useCollection, useQuery } from '@squidcloud/react';
-import { Trip, Hotel } from './types';
+import { Trip, Hotel, Budget } from './types';
 import AskAI from './components/AskAI';
 import AddHotelForm from './components2/AddHotelForm';
 import HotelList from './components2/HotelList';
+import AddBudgetFrom from './components3/AddBudgetFrom';
+import BudgetList from './components3/BudgetList';
 
 function App() {
   // Trip collection and query
@@ -18,6 +20,10 @@ function App() {
   const hotelCollection = useCollection<Hotel>("hotels");
   const hotels = useQuery(hotelCollection.query());
 
+  //Budget collection and query
+  const budgetCollection = useCollection<Budget>("budgets");
+  const budgets = useQuery(budgetCollection.query());
+
   // Helper function to find a hotel by id
   const findHotel = (id: string) => {
     return hotels.data?.find((hotel) => hotel.data.id === id);
@@ -26,6 +32,11 @@ function App() {
   // Helper function to find a trip by id
   const findTrip = (id: string) => {
     return trips.data?.find((trip) => trip.data.id === id);
+  };
+
+  //Helper function to find a budget by id
+  const findBudget = (id: string) => {
+    return budgets.data?.find((budget) => budget.data.id === id);
   };
 
   // Trip functions
@@ -72,6 +83,11 @@ function App() {
     hotel.update({
       notes: notes.filter((_, index) => index !== noteIndex),
     });
+  };
+  //Budget functions
+  const onDeleteBudget = (id: string) => {
+    const budget = findBudget(id);
+    if (budget) budget.delete();
   };
 
   return (
@@ -123,7 +139,12 @@ function App() {
           path="/budget-management"
           element={
             <div className="card3">
-              {/* Budget management component here */}
+              <AskAI />
+              <AddBudgetFrom />
+              <BudgetList 
+              budgets={budgets.data.map((budget) => budget.data)}
+              onDeleteBudget={onDeleteBudget}
+              />
             </div>
           }
         />

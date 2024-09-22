@@ -30,13 +30,13 @@ const HotelCard = ({hotel,onAddNoteHotel,onDeleteHotel,onDeleteNoteHotel,index}:
             {hotel.city}
         </button>
         <button className="cost-button">
-            {hotel.cost}
+            Cost: ${hotel.cost}
         </button>
         <button className="hotelName-button">
-            {hotel.hotelName}
+            Hotel: {hotel.hotelName}
         </button>
         <button className="location-button">
-            {hotel.location}
+            Address: {hotel.location}
         </button>
         <button className="delete-button" onClick={() => onDeleteHotel(hotel.id)}>
             Delete

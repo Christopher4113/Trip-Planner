@@ -18,3 +18,12 @@ export type Hotel = {
     hotelName: string;
     location: string;
 }
+
+export type Budget = {
+    cost: number;
+    startDate: Date;
+    endDate: Date;
+    country: string;
+    id: string;
+    city: string;
+}
