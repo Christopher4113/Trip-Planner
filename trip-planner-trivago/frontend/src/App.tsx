@@ -152,7 +152,7 @@ function App() {
           path="/travel-management"
           element={
             <div className="card4">
-
+              <AskAI />
             </div>
           }
         />
