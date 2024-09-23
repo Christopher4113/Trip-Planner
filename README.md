@@ -4,7 +4,7 @@
 
 <h2>🚀 Demo</h2>
 
-[https://trip-planner-trivago.vercel.app/](https://trip-planner-trivago.vercel.app/)
+[https://streamable.com/3geqaj](https://streamable.com/3geqaj)
 
   
   
