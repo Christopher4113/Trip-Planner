@@ -12,6 +12,8 @@ import AddBudgetFrom from './components3/AddBudgetFrom';
 import BudgetList from './components3/BudgetList';
 import AddTravelForm from './components4/AddTravelForm';
 import TravelList from './components4/TravelList';
+import Login from './Login';
+
 
 function App() {
   // Trip collection and query
@@ -127,7 +129,8 @@ function App() {
     <Router>
       <Routes>
         {/* Home page will load first */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
 
         {/* Route to the trip management page */}
         <Route

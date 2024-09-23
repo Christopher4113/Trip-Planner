@@ -6,6 +6,14 @@ const Home = () => {
   return (
     <div className='main-screen'>
       <h1 className='neon-text'>Welcome to the Trip Management App</h1>
+      <div className="container1">
+        <div className="leave">
+          <Link to="/" className="escape">
+            Exit
+          </Link>
+        </div>
+      </div>
+
       <div className='o1'>
         <div className='option1'>
           <h2>Itnerary Planner</h2>

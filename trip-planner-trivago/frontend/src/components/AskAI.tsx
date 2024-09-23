@@ -25,7 +25,7 @@ function AskAI() {
 
     return (
         <div className="container">
-            <Link to="/" className="home">Home</Link>
+            <Link to="/home" className="home">Home</Link>
             <h3>Ask a Question!</h3>
             <input type="text" value={text} onChange={(e) => setText(e.target.value)}/>
             {loading ? <LoadingIndicator /> : <button onClick={askPressed}>Ask</button>}
