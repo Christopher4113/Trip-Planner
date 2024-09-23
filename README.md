@@ -1,6 +1,6 @@
 <h1 align="center" id="title">Trip-Planner Trivago</h1>
 
-<p id="description">A personalized web application that helps me plan my vacations</p>
+<p id="description">My personalized web application that helps me plan my vacations</p>
 
 <h2>🚀 Demo</h2>
 
